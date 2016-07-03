@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.widget.TextView;
 
 import com.estimote.sdk.Beacon;
@@ -45,6 +46,7 @@ public class NotifyDemoActivity extends BaseActivity {
     super.onCreate(savedInstanceState);
 
     Beacon beacon = getIntent().getParcelableExtra(ListBeaconsActivity.EXTRAS_BEACON);
+    Log.i("uuid", beacon.getProximityUUID().toString());
     region = new Region("regionId", beacon.getProximityUUID(), beacon.getMajor(), beacon.getMinor());
     notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
     beaconManager = new BeaconManager(this);
@@ -96,7 +98,7 @@ public class NotifyDemoActivity extends BaseActivity {
         PendingIntent.FLAG_UPDATE_CURRENT);
     Notification notification = new Notification.Builder(NotifyDemoActivity.this)
         .setSmallIcon(R.drawable.beacon_gray)
-        .setContentTitle("Notify Demo")
+        .setContentTitle("Ayana")
         .setContentText(msg)
         .setAutoCancel(true)
         .setContentIntent(pendingIntent)
