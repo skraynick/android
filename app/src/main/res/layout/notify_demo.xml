@@ -13,7 +13,7 @@
       android:layout_height="wrap_content"
       android:padding="20dp"
       android:textSize="18sp"
-      android:text="You can lock your device now.\n\nKeep walking away from beacon and come back. Pay attention to notification bar."
+      android:text="Current Notifications"
       />
 
   <TextView

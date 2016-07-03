@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.1"
+    useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
         applicationId "de.commercetools.android_example"
@@ -32,4 +33,6 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.3'
     compile 'com.estimote:sdk:0.9.4@aar'
     compile 'org.apache.httpcomponents:httpclient:4.4-alpha1'
+
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
